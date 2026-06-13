@@ -1,5 +1,4 @@
-![Moonstripe preview](./src/assets/moonstripe-preview.png)
-
+![Moonstripe preview](./assets/moonstripe-preview.png)
 # Moonstripe
 
 Moonstripe is a classic Winstripe-inspired complete theme for Pale Moon.

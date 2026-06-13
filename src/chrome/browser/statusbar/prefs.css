@@ -1,0 +1,65 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#status4evar-prefs > prefpane > vbox.content-box
+{
+	min-height: 18em !important;
+}
+
+radio[pane="status4evar-pane-status"]
+{
+	list-style-image: url("chrome://browser/skin/statusbar/prefs-icons/status-info-32.png") !important;
+}
+
+radio[pane="status4evar-pane-progress"]
+{
+	list-style-image: url("chrome://browser/skin/statusbar/prefs-icons/progress-32.png") !important;
+}
+
+radio[pane="status4evar-pane-download"]
+{
+	list-style-image: url("chrome://browser/skin/statusbar/prefs-icons/download-32.png") !important;
+}
+
+radio[pane="status4evar-pane-addonbar"]
+{
+	list-style-image: url("chrome://browser/skin/statusbar/prefs-icons/statusbar-32.png") !important;
+}
+
+radio[pane="status4evar-pane-advanced"]
+{
+	list-style-image: url("chrome://browser/skin/statusbar/prefs-icons/advanced-32.png") !important;
+	-moz-image-region: auto !important;
+}
+
+#status4evar-advanced-urlbar-forceBinding-desc
+{
+	-moz-appearance: none;
+	pointer-events: none;
+	background-color: transparent;
+	border: none;
+	padding: 0px;
+}
+
+#warningInnerBox
+{
+	max-width: 25em;
+}
+
+
+
+/* Moonstripe a5 status bar preferences icon pass.
+ * Use standalone 32px Winstripe-style pane icons instead of missing
+ * information-32.png / generic extension fallback / sprite-region icons.
+ */
+radio[pane="status4evar-pane-status"],
+radio[pane="status4evar-pane-progress"],
+radio[pane="status4evar-pane-download"],
+radio[pane="status4evar-pane-addonbar"],
+radio[pane="status4evar-pane-advanced"]
+{
+	-moz-image-region: auto !important;
+}

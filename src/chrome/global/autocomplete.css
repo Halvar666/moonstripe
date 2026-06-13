@@ -1,0 +1,288 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== autocomplete.css =================================================
+  == Styles used by the autocomplete widget.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/* ::::: autocomplete ::::: */
+
+/* .padded is used by autocomplete widgets that don't have an icon. Gross. -dwh */
+textbox:not(.padded) {
+  cursor: default;
+  padding: 0;
+}
+
+/* Used by autocomplete widgets that don't have an icon. Gross. -dwh */
+textbox.padded {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
+}
+
+.autocomplete-textbox-container {
+  -moz-box-align: center;
+}
+
+textbox:not(.padded) .textbox-input-box {
+  margin: 0 3px;
+}
+
+.textbox-input-box {
+  -moz-box-align: center;
+}
+
+/* ::::: autocomplete popups ::::: */
+
+panel[type="autocomplete"],
+panel[type="autocomplete-richlistbox"],
+.autocomplete-history-popup {
+  -moz-appearance: none;
+  border-width: 1px;
+  -moz-border-top-colors: ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDDarkShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow;
+  -moz-border-left-colors: ThreeDDarkShadow;
+  padding: 0;
+  background-color: -moz-Field;
+}
+
+.autocomplete-history-popup {
+  max-height: 180px;
+}
+
+/* ::::: tree ::::: */
+
+.autocomplete-tree {
+  -moz-appearance: none !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.autocomplete-treecol {
+  -moz-appearance: none !important;
+  margin: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* GTK calculates space for a sort arrow */
+.autocomplete-treecol > .treecol-sortdirection {
+  -moz-appearance: none !important;
+}
+
+.autocomplete-treebody::-moz-tree-cell-text {
+  -moz-padding-start: 8px;
+}
+
+treechildren.autocomplete-treebody::-moz-tree-row(selected) {
+ background-color: Highlight;
+}
+
+treechildren.autocomplete-treebody::-moz-tree-cell-text(selected) {
+  color: HighlightText !important;
+}
+
+.autocomplete-treebody::-moz-tree-image(treecolAutoCompleteValue) {
+  max-width: 16px;
+  height: 16px;
+}
+
+/* ::::: richlistbox autocomplete ::::: */
+
+.autocomplete-richlistbox {
+  -moz-appearance: none;
+  margin: 0;
+}
+
+.autocomplete-richlistitem {
+  padding: 1px 2px;
+  border-bottom: 1px solid ThreeDShadow;
+}
+
+.autocomplete-richlistitem[selected="true"] {
+  background-color: Highlight;
+  color: HighlightText;
+}
+
+.ac-site-icon {
+  width: 16px; 
+  height: 16px;
+  margin: 0 5px -3px 3px;
+}
+
+.ac-type-icon {
+  width: 16px; 
+  height: 16px;
+}
+
+.ac-extra > .ac-result-type-tag {
+  margin: 0 4px;
+}
+
+.ac-extra > .ac-comment {
+  padding-right: 4px;
+}
+
+.ac-ellipsis-after {
+  margin: 2px 0px 0px 0px !important;
+  padding: 0; 
+  min-width: 1em;
+}
+
+.ac-normal-text {
+  margin: 2px 0px 0px 0px !important;
+  padding: 0;
+}
+
+.ac-normal-text > html|span {
+  margin: 0 !important;
+  padding: 0;
+}
+
+html|span.ac-emphasize-text {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+html|span.ac-emphasize-alt {
+  text-decoration: underline;
+}
+
+.ac-title, .ac-url {
+  overflow: hidden;
+}
+
+/* ::::: textboxes inside toolbarpaletteitems ::::: */
+
+toolbarpaletteitem > toolbaritem > textbox > hbox > hbox > html|*.textbox-input {
+  visibility: hidden;
+}
+
+toolbarpaletteitem > toolbaritem > * > textbox > hbox > hbox > html|*.textbox-input {
+  visibility: hidden;
+}
+
+/* Moonstripe a12: URL bar / autocomplete favicon containment.
+ * Some sites provide oversized favicons. Keep the real site icon, but never
+ * allow it to expand the autocomplete/history popup rows or columns.
+ */
+#PopupAutoComplete,
+#PopupAutoCompleteRichResult,
+panel[type="autocomplete"],
+panel[type="autocomplete-richlistbox"],
+.autocomplete-history-popup {
+  min-width: 0 !important;
+}
+
+#PopupAutoComplete tree,
+#PopupAutoCompleteRichResult richlistbox,
+.autocomplete-tree,
+.autocomplete-richlistbox {
+  overflow: hidden !important;
+}
+
+#treecolAutoCompleteImage,
+treecol#treecolAutoCompleteImage {
+  width: 24px !important;
+  max-width: 24px !important;
+  min-width: 24px !important;
+}
+
+.autocomplete-treebody::-moz-tree-image,
+.autocomplete-treebody::-moz-tree-image(treecolAutoCompleteValue),
+.autocomplete-treebody::-moz-tree-image(treecolAutoCompleteImage) {
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+}
+
+.autocomplete-richlistitem {
+  min-height: 22px !important;
+  max-height: 28px !important;
+  overflow: hidden !important;
+}
+
+#PopupAutoCompleteRichResult .ac-site-icon,
+.autocomplete-richlistitem .ac-site-icon,
+image.ac-site-icon,
+.ac-site-icon {
+  width: 16px !important;
+  min-width: 16px !important;
+  max-width: 16px !important;
+  height: 16px !important;
+  min-height: 16px !important;
+  max-height: 16px !important;
+  margin: 0 5px 0 3px !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+}
+
+#PopupAutoCompleteRichResult .ac-type-icon,
+.autocomplete-richlistitem .ac-type-icon,
+image.ac-type-icon,
+.ac-type-icon {
+  width: 16px !important;
+  min-width: 16px !important;
+  max-width: 16px !important;
+  height: 16px !important;
+  min-height: 16px !important;
+  max-height: 16px !important;
+  margin: 0 4px !important;
+  padding: 0 !important;
+}
+
+#PopupAutoCompleteRichResult .ac-title,
+#PopupAutoCompleteRichResult .ac-url,
+#PopupAutoCompleteRichResult .ac-title-text,
+#PopupAutoCompleteRichResult .ac-url-text,
+#PopupAutoCompleteRichResult .ac-action-text,
+#PopupAutoCompleteRichResult .ac-separator-text,
+#PopupAutoCompleteRichResult .ac-normal-text,
+#PopupAutoCompleteRichResult .ac-ellipsis-after,
+.autocomplete-richlistitem .ac-title,
+.autocomplete-richlistitem .ac-url,
+.autocomplete-richlistitem .ac-title-text,
+.autocomplete-richlistitem .ac-url-text,
+.autocomplete-richlistitem .ac-action-text,
+.autocomplete-richlistitem .ac-separator-text,
+.autocomplete-richlistitem .ac-normal-text,
+.autocomplete-richlistitem .ac-ellipsis-after {
+  min-height: 0 !important;
+  max-height: 22px !important;
+  overflow: hidden !important;
+}
+
+#PopupAutoCompleteRichResult .ac-url-box,
+#PopupAutoCompleteRichResult .ac-title-box,
+#PopupAutoCompleteRichResult .ac-site-icon-box,
+.autocomplete-richlistitem .ac-url-box,
+.autocomplete-richlistitem .ac-title-box,
+.autocomplete-richlistitem .ac-site-icon-box {
+  min-height: 0 !important;
+  max-height: 24px !important;
+  overflow: hidden !important;
+}
+
+/* Moonstripe a18: private autocomplete favicon hard limit. */
+.private-autocomplete-treebody::-moz-tree-image,
+.private-autocomplete-treebody::-moz-tree-image(treecolAutoCompleteValue),
+.private-autocomplete-treebody::-moz-tree-image(treecolAutoCompleteImage) {
+  width: 16px !important;
+  height: 16px !important;
+  max-width: 16px !important;
+  max-height: 16px !important;
+}
+
+.private-autocomplete-history-popup,
+.private-autocomplete-tree,
+.private-autocomplete-treebody {
+  overflow: hidden !important;
+}
+

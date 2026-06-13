@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<!--
+  Moonstripe theme for Pale Moon.
+
+  This theme is a continuation/fork of the abandoned Winstripe Moon theme.
+  See LICENSE.md and CREDITS.md for licensing and contributor details.
+-->
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>moonstripe@halvar666</em:id>
+    <em:version>1.0.0</em:version>
+    <em:name>Moonstripe</em:name>
+    <em:description>Classic Winstripe/Winestripe-inspired theme for Pale Moon.</em:description>
+    <em:creator>Halvar666</em:creator>
+    <em:type>4</em:type>
+    <em:internalName>moonstripe</em:internalName>
+    <em:skinnable>true</em:skinnable>
+
+    <em:contributor>libertyernie - original Winstripe Moon theme</em:contributor>
+    <em:contributor>FranklinDM - upstream Winstripe Moon contributor</em:contributor>
+    <em:contributor>Lootyhoof - Fox 2 The Moon lineage</em:contributor>
+    <em:contributor>fax8 - Fox 2 The Moon lineage</em:contributor>
+    <em:contributor>rctgamer3 - Firefox 2 theme lineage</em:contributor>
+    <em:contributor>borr - Fox 2 The Moon / Firefox 2 theme lineage</em:contributor>
+    <em:contributor>Graciliano - Fox 2 The Moon lineage</em:contributor>
+    <em:contributor>Thunderseb / Sébastien de la Marck - Winestripe Realfox 4 icon source/reference</em:contributor>
+
+    <em:targetApplication>
+      <Description>
+        <!-- Pale Moon -->
+        <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
+        <em:minVersion>27.0.0b3</em:minVersion>
+        <em:maxVersion>34.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>

@@ -1,0 +1,173 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.searchbar-textbox {
+  min-height: 22px;
+  width: 6em;
+  min-width: 6em;
+  background-color: -moz-field;
+  -moz-appearance: none;
+  border-width: 0;
+  padding: 0;
+}
+
+.textbox-input-box {
+  margin: 0;
+  border: 1px solid #96969D;
+}
+
+/* ::::: searchbar-engine-button ::::: */
+
+.searchbar-engine-image {
+  height: 16px;
+  width: 16px;
+  list-style-image: url("chrome://global/skin/icons/folder-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  -moz-margin-start: 3px;
+}
+
+.searchbar-engine-button {
+  -moz-appearance: none;
+  min-width: 0;
+  margin: 0;
+  -moz-margin-end: 3px;
+  padding: 2px 0;
+  border: 0;
+  -moz-box-align: center;
+  background: -moz-dialog url("chrome://browser/skin/Search-provider-bkgnd.png");
+  background-position: -1px -1px;
+  outline: 1px solid ThreeDShadow;
+  -moz-margin-start: -1px;
+  -moz-outline-radius-topleft: 2px;
+  -moz-outline-radius-bottomleft: 2px;
+}
+
+.searchbar-engine-button:-moz-locale-dir(rtl) {
+  -moz-outline-radius-topleft: 0;
+  -moz-outline-radius-bottomleft: 0;
+  -moz-outline-radius-topright: 2px;
+  -moz-outline-radius-bottomright: 2px;
+}
+
+.searchbar-engine-button:hover {
+  outline-color: ThreeDDarkShadow;
+  background-position: -33px -1px;
+}
+
+.searchbar-engine-button[open="true"] {
+  background-position: -65px -1px;
+}
+
+.searchbar-engine-button > .button-box {
+  -moz-appearance: none;
+  padding: 0;
+  -moz-padding-end: 3px;
+  border: 0;
+}
+
+/* blue glow */
+.searchbar-engine-button[addengines="true"] {
+  background-position: -95px -1px;
+}
+
+.searchbar-dropmarker-image {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+  -moz-margin-start: 3px;
+}
+
+/* ::::: search-go-button ::::: */
+
+.search-go-container {
+  -moz-box-align: center;
+}
+
+.search-go-button {
+  list-style-image: url("chrome://browser/skin/Search-glass.png");
+  -moz-image-region: rect(3px 20px 19px 4px);
+  outline: 1px solid ButtonShadow !important;
+  background: -moz-Dialog url("chrome://browser/skin/Search-bkgnd.png") !important;
+  background-position: 0 -1px !important;
+  -moz-outline-radius-topright: 3px !important;
+  -moz-outline-radius-bottomright: 3px !important;
+  padding: 2px 4px 2px 4px; /* not sure if this is correct - it may cause other problems */
+}
+
+.search-go-button:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://browser/skin/Search-glass-rtl.png");
+}
+
+.search-go-button:hover {
+  -moz-image-region: rect(3px 45px 19px 29px);
+  background-position: -24px -1px;
+}
+
+.search-go-button[disabled="true"] {
+  -moz-image-region: rect(3px, 70px, 19px, 54px);
+  background-position: -50px -1px;
+}
+
+.search-go-button:hover:active {
+  -moz-image-region: rect(3px, 95px, 19px, 79px);
+  background-position: -75px -1px;
+}
+
+.searchbar-engine-menuitem[selected="true"] > .menu-iconic-text {
+  font-weight: bold;
+}
+
+/* Moonstripe a16: Search bar geometry cleanup.
+ * Avoid outline-based drawing outside the field and keep the engine/search
+ * buttons attached to the search textbox.
+ */
+.searchbar-textbox {
+  min-height: 22px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.searchbar-engine-button {
+  outline: none !important;
+  border: 1px solid ThreeDShadow !important;
+  border-right: none !important;
+  -moz-border-radius: 2px 0 0 2px !important;
+  border-radius: 2px 0 0 2px !important;
+  margin: 0 !important;
+  -moz-margin-end: 0 !important;
+  -moz-margin-start: 0 !important;
+  min-height: 20px !important;
+}
+
+.searchbar-engine-button:-moz-locale-dir(rtl) {
+  border-right: 1px solid ThreeDShadow !important;
+  border-left: none !important;
+  -moz-border-radius: 0 2px 2px 0 !important;
+  border-radius: 0 2px 2px 0 !important;
+}
+
+.searchbar-engine-button:hover {
+  outline: none !important;
+  border-color: ThreeDDarkShadow !important;
+}
+
+.search-go-button {
+  -moz-appearance: none !important;
+  outline: none !important;
+  border: 1px solid ButtonShadow !important;
+  border-left: none !important;
+  margin: 0 !important;
+  min-width: 22px !important;
+  min-height: 20px !important;
+  max-height: 20px !important;
+  -moz-border-radius: 0 2px 2px 0 !important;
+  border-radius: 0 2px 2px 0 !important;
+  padding: 2px 4px 2px 4px !important;
+}
+
+.search-go-button:-moz-locale-dir(rtl) {
+  border-left: 1px solid ButtonShadow !important;
+  border-right: none !important;
+  -moz-border-radius: 2px 0 0 2px !important;
+  border-radius: 2px 0 0 2px !important;
+}
+

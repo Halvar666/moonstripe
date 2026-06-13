@@ -1,0 +1,4 @@
+/* Compatibility wrapper for older about:permissions path.
+ * Current Pale Moon loads chrome://browser/skin/permissions/aboutPermissions.css.
+ */
+@import url("chrome://browser/skin/permissions/aboutPermissions.css");
